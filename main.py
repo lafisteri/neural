@@ -8,4 +8,7 @@ learning_rate = 0.3
 
 n = neuralNetwork(input_nodes, hiden_nodes, output_nodes, learning_rate)
 
-print(numpy.random.rand(3,3) - 0.5)
+#print(numpy.random.rand(3,3) - 0.5)
+
+
+print(n.query([1.0, 0.5, -1.5]))
