@@ -1,7 +1,8 @@
 import numpy
-import  scipy.special
+import scipy.special
 
-class neuralNetwork:
+
+class NeuralNetwork:
     def __init__(self, inputnodes, hiddennodes, outputnodes, learningrate):
         self.inputNodes = inputnodes
         self.hiddenNodes = hiddennodes
@@ -43,9 +44,10 @@ class neuralNetwork:
 
         # обновить весовые коэфициенты для связей между входным и скрытым слоями
         self.wih += self.learningRate * numpy.dot((hidden_errors * hidden_outputs * (1.0 - hidden_outputs)),
-                                                  numpy.transpose(hidden_outputs))
+                                                  numpy.transpose(inputs))
         pass
 
+    # опрос нейронной сети
     def query(self, inputs_list):
         # преобразовать список входящих значений в двумерный массив
         inputs = numpy.array(inputs_list, ndmin=2).T
